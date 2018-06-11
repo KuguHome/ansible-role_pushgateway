@@ -1,0 +1,16 @@
+[Unit]
+Description=pushgateway - Gateway for prometheus metrics.
+Documentation=https://github.com/prometheus/pushgateway
+After=network.target
+
+[Service]
+User={{ pushgateway_user }}
+Group={{ pushgateway_group }}
+ExecStart={{ pushgateway_program }} \
+--web.listen-address {{ pushgateway_web_listen_address }} 
+
+SyslogIdentifier=pushgateway
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

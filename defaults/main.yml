@@ -1,0 +1,11 @@
+pushgateway_user:   pushgateway
+pushgateway_group:  "{{ pushgateway_user }}"
+
+pushgateway_version: "0.5.1"
+
+pushgateway_home: "/opt/pushgateway"
+pushgateway_dist: pushgateway-{{ pushgateway_version }}.linux-amd64
+pushgateway_url: "https://github.com/prometheus/pushgateway/releases/download/v{{ pushgateway_version }}/{{ pushgateway_dist }}.tar.gz"
+pushgateway_program: "{{ pushgateway_home }}/pushgateway"
+
+pushgateway_web_listen_address: "localhost:9091"
